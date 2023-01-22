@@ -182,14 +182,20 @@ void off(void)
         {
         case 'i':
             state = ON;
+            iteration = 0;
             break;
         case 'x':
             state = SHUTDOWN;
+            iteration = 0;
             break;
         default:
             state = OFF;
+            iteration = 0;
         }
     }
+
+    // Reset iteration counter
+    iteration = 0;
 }
 
 void on(void)
@@ -259,15 +265,19 @@ void on(void)
         {
         case '1':
             state = MODE1;
+            iteration = 0;
             break;
         case '2':
             state = MODE2;
+            iteration = 0;
             break;
         case '0':
             state = OFF;
+            iteration = 0;
             break;
         default:
             state = ON;
+            iteration = 0;
         }
     }
 }
@@ -339,15 +349,19 @@ void mode1(void)
         {
         case 'i':
             state = ON;
+            iteration = 0;
             break;
         case '2':
             state = MODE2;
+            iteration = 0;
             break;
         case '0':
             state = OFF;
+            iteration = 0;
             break;
         default:
             state = MODE1;
+            iteration = 0;
         }
     }
 }
@@ -419,15 +433,19 @@ void mode2(void)
         {
         case 'i':
             state = ON;
+            iteration = 0;
             break;
         case '1':
             state = MODE1;
+            iteration = 0;
             break;
         case '0':
             state = OFF;
+            iteration = 0;
             break;
         default:
             state = MODE2;
+            iteration = 0;
         }
     }
 }
