@@ -200,14 +200,24 @@ void on(void)
 
     int position = iteration % LINECHARS;
 
-    for (int i = 0; i < position; i++)
+    for (int i = 0; i <= position; i++)
     {
-        attrset(COLOR_PAIR(1));
-        printw("-");
-        attrset(A_NORMAL);
+        if (i > position - 4)
+        {
+            attrset(COLOR_PAIR(1));
+            printw("-");
+            attrset(A_NORMAL);
+        }
+        else
+        {
+            attron(COLOR_PAIR(COLOR_BLACK));
+            attron(A_DIM);
+            printw("-");
+            attrset(A_NORMAL);
+        }
     }
 
-    for (int j = position; j < LINECHARS; j++)
+    for (int j = position; j < LINECHARS - 1; j++)
     {
         attron(COLOR_PAIR(COLOR_BLACK));
         attron(A_DIM);
@@ -270,14 +280,24 @@ void mode1(void)
 
     int position = iteration % LINECHARS;
 
-    for (int i = 0; i < position; i++)
+    for (int i = 0; i <= position; i++)
     {
-        attrset(COLOR_PAIR(2));
-        printw("-");
-        attrset(A_NORMAL);
+        if (i > position - 4)
+        {
+            attrset(COLOR_PAIR(2));
+            printw("-");
+            attrset(A_NORMAL);
+        }
+        else
+        {
+            attron(COLOR_PAIR(COLOR_BLACK));
+            attron(A_DIM);
+            printw("-");
+            attrset(A_NORMAL);
+        }
     }
 
-    for (int j = position; j < LINECHARS; j++)
+    for (int j = position; j < LINECHARS - 1; j++)
     {
         attron(COLOR_PAIR(COLOR_BLACK));
         attron(A_DIM);
@@ -340,14 +360,24 @@ void mode2(void)
 
     int position = iteration % LINECHARS;
 
-    for (int i = 0; i < position; i++)
+    for (int i = 0; i <= position; i++)
     {
-        attrset(COLOR_PAIR(3));
-        printw("-");
-        attrset(A_NORMAL);
+        if (i > position - 4)
+        {
+            attrset(COLOR_PAIR(3));
+            printw("-");
+            attrset(A_NORMAL);
+        }
+        else
+        {
+            attron(COLOR_PAIR(COLOR_BLACK));
+            attron(A_DIM);
+            printw("-");
+            attrset(A_NORMAL);
+        }
     }
 
-    for (int j = position; j < LINECHARS; j++)
+    for (int j = position; j < LINECHARS - 1; j++)
     {
         attron(COLOR_PAIR(COLOR_BLACK));
         attron(A_DIM);
